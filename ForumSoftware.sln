@@ -7,6 +7,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumSoftware", "ForumSoftw
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumSoftware.Tests", "ForumSoftware.Tests\ForumSoftware.Tests.csproj", "{10BBBE35-9259-4F98-BD99-2C47F44256F5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumSoftware.DAL", "ForumSoftware.DAL\ForumSoftware.DAL.csproj", "{CF16BE5E-CEF2-422E-8D96-EBE0971661D8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ForumSoftware.BLL", "ForumSoftware.BLL\ForumSoftware.BLL.csproj", "{7C89EA27-BE25-4D3A-8A09-DB19EBDD60C4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{10BBBE35-9259-4F98-BD99-2C47F44256F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10BBBE35-9259-4F98-BD99-2C47F44256F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10BBBE35-9259-4F98-BD99-2C47F44256F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF16BE5E-CEF2-422E-8D96-EBE0971661D8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF16BE5E-CEF2-422E-8D96-EBE0971661D8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF16BE5E-CEF2-422E-8D96-EBE0971661D8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF16BE5E-CEF2-422E-8D96-EBE0971661D8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7C89EA27-BE25-4D3A-8A09-DB19EBDD60C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7C89EA27-BE25-4D3A-8A09-DB19EBDD60C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7C89EA27-BE25-4D3A-8A09-DB19EBDD60C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7C89EA27-BE25-4D3A-8A09-DB19EBDD60C4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
