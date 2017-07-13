@@ -19,6 +19,7 @@ namespace ForumSoftware.Entities
         // Thread info
         public string Title { get; set; }
         public DateTime CreationDate { get; set; }
+        public bool Closed { get; set; }
 
         // navigation properties
         public ICollection<Post> Posts { get; set; }

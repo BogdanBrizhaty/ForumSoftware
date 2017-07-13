@@ -15,6 +15,10 @@ namespace ForumSoftware.DAL.DataContext
         {
 
         }
+        public ApplicationDataContext() :base("DefaultConnection")
+        {
+
+        }
         public DbSet<UserProfile> UserProfiles { get; set; }
     }
 }
