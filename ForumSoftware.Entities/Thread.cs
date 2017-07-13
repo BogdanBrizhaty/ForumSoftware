@@ -13,14 +13,17 @@ namespace ForumSoftware.Entities
         // Key setup
         [Key]
         public int ThreadId { get; set; }
-        [ForeignKey("UserProfile")]
-        public int AuthorId { get; set; }
+        [ForeignKey("Author")]
+        public string AuthorId { get; set; }
 
         // Thread info
         public string Title { get; set; }
         public DateTime CreationDate { get; set; }
-        
+
         // navigation properties
         public ICollection<Post> Posts { get; set; }
+        public virtual UserProfile Author { get; set; }
+
+
     }
 }

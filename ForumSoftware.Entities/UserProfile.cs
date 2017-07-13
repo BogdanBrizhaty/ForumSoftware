@@ -13,7 +13,8 @@ namespace ForumSoftware.Entities
         // KeySetup to reffer AppUser
         [Key]
         [ForeignKey("ApplicationUser")]
-        public int Id { get; set; }
+        public string Id { get; set; }
+        // Name removed, in case of It already exists in IdentityUserClass(so in ApplicationUser class also)
 
         // user info
         public DateTime? BirthDate { get; set; }
@@ -27,5 +28,6 @@ namespace ForumSoftware.Entities
 
         // bind to AppUser class
         public virtual ApplicationUser ApplicationUser { get; set; }
+
     }
 }

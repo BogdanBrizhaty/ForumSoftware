@@ -12,11 +12,19 @@ namespace ForumSoftware.Entities
     {
         [Key]
         public int PostId { get; set; }
-        [ForeignKey("UserProfile")]
-        public int AuthorId { get; set; }
+        [ForeignKey("Author")]
+        public string AuthorId { get; set; }
+        [ForeignKey("Thread")]
+        public int ThreadId { get; set; }
 
         // post info
         public DateTime CreationDate { get; set; }
         public string Content { get; set; }
+
+        // navigational properties
+        public int MyProperty { get; set; }
+        public virtual UserProfile Author { get; set; }
+        public virtual Thread Thread { get; set; }
+
     }
 }
