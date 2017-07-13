@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ForumSoftware.Entities
 {
-    public class UserProfile
+    public class UserProfile : IDbEntity
     {
         // KeySetup to reffer AppUser
         [Key]

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ForumSoftware.Entities
 {
-    public class ApplicationUser : IdentityUser
+    public class ApplicationUser : IdentityUser, IDbEntity
     {
         public virtual UserProfile UserProfile { get; set; }
     }

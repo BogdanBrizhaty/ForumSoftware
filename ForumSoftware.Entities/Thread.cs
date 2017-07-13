@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ForumSoftware.Entities
 {
-    public class Thread
+    public class Thread : IDbEntity
     {
         // Key setup
         [Key]

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ForumSoftware.Entities
 {
-    public class Post
+    public class Post : IDbEntity
     {
         [Key]
         public int PostId { get; set; }
