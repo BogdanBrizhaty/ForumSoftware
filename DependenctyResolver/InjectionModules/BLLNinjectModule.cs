@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ForumSoftware.BLL
+namespace DependenctyResolver.InjectionModules
 {
-    public class Class1
+    class BLLNinjectModule
     {
     }
 }
