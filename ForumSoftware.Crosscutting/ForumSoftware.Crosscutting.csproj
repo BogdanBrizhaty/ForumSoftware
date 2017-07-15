@@ -7,8 +7,8 @@
     <ProjectGuid>{445B942A-830E-4CA7-BC53-A3F30C4B9476}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Crosscutting</RootNamespace>
-    <AssemblyName>Crosscutting</AssemblyName>
+    <RootNamespace>ForumSoftware.Crosscutting</RootNamespace>
+    <AssemblyName>ForumSoftware.Crosscutting</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -41,7 +41,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataPortion.cs" />
+    <Compile Include="OperationDetails.cs" />
+    <Compile Include="OperationFailureError.cs" />
     <Compile Include="IDataPortion.cs" />
+    <Compile Include="IError.cs" />
+    <Compile Include="IOperationDetails.cs" />
     <Compile Include="Ordering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
