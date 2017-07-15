@@ -30,6 +30,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.1.1.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.6.1.1\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -97,6 +101,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="InjectionModules\AutoMapperNinjectModule.cs" />
     <Compile Include="InjectionModules\BLLNinjectModule.cs" />
     <Compile Include="InjectionModules\DALNinjectModule.cs" />
     <Compile Include="NinjectDependencyResolver.cs" />
@@ -110,6 +115,10 @@
     <ProjectReference Include="..\ForumSoftware.BLL\ForumSoftware.BLL.csproj">
       <Project>{7c89ea27-be25-4d3a-8a09-db19ebdd60c4}</Project>
       <Name>ForumSoftware.BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ForumSoftware.ClassMap\ForumSoftware.ClassMapping.csproj">
+      <Project>{1bee676a-dc8e-408f-8cd4-bcafccffbc10}</Project>
+      <Name>ForumSoftware.ClassMapping</Name>
     </ProjectReference>
     <ProjectReference Include="..\ForumSoftware.Crosscutting\ForumSoftware.Crosscutting.csproj">
       <Project>{445b942a-830e-4ca7-bc53-a3f30c4b9476}</Project>
