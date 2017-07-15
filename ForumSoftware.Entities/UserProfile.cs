@@ -18,7 +18,7 @@ namespace ForumSoftware.Entities
 
         // user info
         public DateTime? BirthDate { get; set; }
-        public DateTime? JoinDate { get; set; }
+        public DateTime JoinDate { get; set; }
         public int Reputation { get; set; }
         public string Location { get; set; }
 
