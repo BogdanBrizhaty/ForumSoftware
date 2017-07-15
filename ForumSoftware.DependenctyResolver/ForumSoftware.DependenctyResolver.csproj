@@ -111,6 +111,10 @@
       <Project>{7c89ea27-be25-4d3a-8a09-db19ebdd60c4}</Project>
       <Name>ForumSoftware.BLL</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ForumSoftware.Crosscutting\ForumSoftware.Crosscutting.csproj">
+      <Project>{445b942a-830e-4ca7-bc53-a3f30c4b9476}</Project>
+      <Name>ForumSoftware.Crosscutting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ForumSoftware.DAL\ForumSoftware.DAL.csproj">
       <Project>{cf16be5e-cef2-422e-8d96-ebe0971661d8}</Project>
       <Name>ForumSoftware.DAL</Name>
