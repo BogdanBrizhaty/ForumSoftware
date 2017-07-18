@@ -12,6 +12,7 @@ using AutoMapper;
 using System.Security.Claims;
 using ForumSoftware.BLL.DTO;
 using ForumSoftware.Crosscutting;
+using Microsoft.AspNet.Identity;
 
 namespace ForumSoftware.Controllers
 {
@@ -25,19 +26,29 @@ namespace ForumSoftware.Controllers
             _mapper = mapper;
         }
         // GET: Account
+        [AllowAnonymous]
         public ActionResult Login()
         {
             return View();
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Logoff()
+        {
+            //ViewBag.ReturnUrl = returnUrl;
+            AuthManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
+            return RedirectToAction("Index", "Home");
+        }
         // 
         [HttpPost]
+        [AllowAnonymous]
         [ValidateAntiForgeryToken]
         public async Task<ActionResult> Login(LoginModel model)
         {
             if (ModelState.IsValid)
             {
-                //UserDTO userDto = new UserDTO { Email = model.Email, Password = model.Password };
-                var userDto = _mapper.Map<UserCredentialsDTO>(model);
+                var userDto = new UserCredentialsDTO { UserName = model.UserName, Password = model.Password };
+                //var userDto = _mapper.Map<UserCredentialsDTO>(model);
                 ClaimsIdentity claim = await UserService.Authenticate(userDto);
                 if (claim == null)
                 {
