@@ -13,7 +13,7 @@ namespace ForumSoftware.ClassMapping.MappingProfiles
     {
         public DTOtoEntityMappingProfile()
         {
-            CreateMap<UserCredentialsDTO, ApplicationUser>();
+            CreateMap<UserCredentialsDTO, ApplicationUser>().ForMember("Id", opt => opt.Ignore());
             CreateMap<UserProfileDTO, UserProfile>();
 
             // other maps goe here
