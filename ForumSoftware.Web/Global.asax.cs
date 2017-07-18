@@ -1,4 +1,6 @@
-﻿using System;
+﻿using DependenctyResolver;
+using ForumSoftware.DependenctyResolver;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -16,6 +18,9 @@ namespace ForumSoftware
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);
             BundleConfig.RegisterBundles(BundleTable.Bundles);
+            DependencyInjectionConfig.RegisterModules(InjectionModuleContainer.Modules);
+
+            DependencyResolver.SetResolver(NinjectDependencyResolver.UseRegisteredModules());
         }
     }
 }

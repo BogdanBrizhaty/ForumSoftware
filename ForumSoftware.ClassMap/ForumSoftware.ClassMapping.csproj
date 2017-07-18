@@ -46,8 +46,6 @@
   <ItemGroup>
     <Compile Include="AutoMapperConfigurator.cs" />
     <Compile Include="MappingProfiles\DTOtoEntityMappingProfile.cs" />
-    <Compile Include="MappingProfiles\DTOtoViewModelMappingProfile.cs" />
-    <Compile Include="MappingProfiles\ViewModelToDTOMappingProfile.cs" />
     <Compile Include="MappingProfiles\EntityToDTOMappingProfile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

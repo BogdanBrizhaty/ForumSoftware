@@ -1,12 +1,10 @@
-﻿using ForumSoftware.DAL.Abstract;
+﻿using ForumSoftware.Crosscutting;
+using ForumSoftware.DAL.Abstract;
 using ForumSoftware.Entities;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Data.Entity.Core.Objects;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ForumSoftware.DAL.Concrete
 {
@@ -41,10 +39,13 @@ namespace ForumSoftware.DAL.Concrete
         }
 
         // Repository interface implementation
-        public IDataPortion<TEntity> Get(int page, int pageSize = 10)
+        public virtual IDataPortion<TEntity> GetMany(int page, int pageSize = 10, Ordering<TEntity> order = null)
         {
             // IQueriable<TEntity> goes here
-            var query = DataContext.Set<TEntity>();
+            var query = (order == null) 
+                ? order.Apply(DataContext.Set<TEntity>()) 
+                : DataContext.Set<TEntity>();
+
             var totalItemsInTable = query.Count();
 
             if (page * pageSize > totalItemsInTable)
@@ -54,7 +55,7 @@ namespace ForumSoftware.DAL.Concrete
 
             return new DataPortion<TEntity>(/*new List<TEntity>()*/resultationEntities, totalItemsInTable);
         }
-        public void Create(TEntity item)
+        public virtual void Create(TEntity item)
         {
             if (item == null)
                 throw new ArgumentNullException("item");
@@ -62,7 +63,7 @@ namespace ForumSoftware.DAL.Concrete
             DataContext.Set<TEntity>().Add(item);
         }
 
-        public void Delete(TEntity item)
+        public virtual void Delete(TEntity item)
         {
             if (item == null)
                 throw new ArgumentNullException("item");
@@ -71,7 +72,7 @@ namespace ForumSoftware.DAL.Concrete
             DataContext.Entry(item).State = EntityState.Deleted;
         }
 
-        public TEntity GetById(TKey id)
+        public virtual TEntity GetById(TKey id)
         {
             var resultationEntity = DataContext.Set<TEntity>().Find(id);
 
@@ -81,13 +82,13 @@ namespace ForumSoftware.DAL.Concrete
             return resultationEntity;
         }
 
-        public void Update(TEntity item)
+        public virtual void Update(TEntity item)
         {
             DataContext.Set<TEntity>().Attach(item);
             DataContext.Entry(item).State = EntityState.Modified;
         }
 
-        public bool Exists(TEntity item)
+        public virtual bool Exists(TEntity item)
         {
             return DataContext.Set<TEntity>().Local.Any(e => e == item);
         }
@@ -101,7 +102,7 @@ namespace ForumSoftware.DAL.Concrete
             {
                 if (disposing)
                 {
-                    _dataContext.Dispose();
+                    //_dataContext.Dispose();
                 }
 
                 disposedValue = true;

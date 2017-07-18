@@ -46,6 +46,10 @@
       <HintPath>..\packages\Microsoft.AspNet.Identity.EntityFramework.2.2.1\lib\net45\Microsoft.AspNet.Identity.EntityFramework.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Ninject, Version=3.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\Ninject.3.2.2.0\lib\net45-full\Ninject.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -57,14 +61,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstract\IDataPortion.cs" />
-    <Compile Include="Abstract\IProfileManager.cs" />
+    <Compile Include="Abstract\IPostRepository.cs" />
     <Compile Include="Abstract\IProfileRepository.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IThreadRepository.cs" />
-    <Compile Include="Abstract\IUnitOfWork.cs" />
+    <Compile Include="Abstract\IDbUnitOfWork.cs" />
     <Compile Include="Concrete\AEfRepository.cs" />
-    <Compile Include="Concrete\DataPortion.cs" />
+    <Compile Include="Concrete\ApplicationDbUnitOfWork.cs" />
+    <Compile Include="Concrete\ApplicationUserRepository.cs" />
     <Compile Include="Concrete\UserProfileRepository.cs" />
     <Compile Include="DataContext\ApplicationDataContext.cs" />
     <Compile Include="Identity\ApplicationRoleManager.cs" />
@@ -77,6 +81,14 @@
     <Compile Include="Migrations\201707132030462_ClosedPropertyAdded.Designer.cs">
       <DependentUpon>201707132030462_ClosedPropertyAdded.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201707141352249_UserRoleConflictResolving.cs" />
+    <Compile Include="Migrations\201707141352249_UserRoleConflictResolving.Designer.cs">
+      <DependentUpon>201707141352249_UserRoleConflictResolving.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201707181257423_notknowwhat.cs" />
+    <Compile Include="Migrations\201707181257423_notknowwhat.Designer.cs">
+      <DependentUpon>201707181257423_notknowwhat.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -85,6 +97,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ForumSoftware.Crosscutting\ForumSoftware.Crosscutting.csproj">
+      <Project>{445b942a-830e-4ca7-bc53-a3f30c4b9476}</Project>
+      <Name>ForumSoftware.Crosscutting</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ForumSoftware.Entities\ForumSoftware.Entities.csproj">
       <Project>{b38cbf5f-4071-490d-a183-d17396de4af5}</Project>
       <Name>ForumSoftware.Entities</Name>
@@ -97,7 +113,14 @@
     <EmbeddedResource Include="Migrations\201707132030462_ClosedPropertyAdded.resx">
       <DependentUpon>201707132030462_ClosedPropertyAdded.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707141352249_UserRoleConflictResolving.resx">
+      <DependentUpon>201707141352249_UserRoleConflictResolving.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201707181257423_notknowwhat.resx">
+      <DependentUpon>201707181257423_notknowwhat.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

@@ -21,7 +21,7 @@ namespace DependenctyResolver.InjectionModules
             Bind<ApplicationUserManager>().ToSelf();
             Bind<ApplicationRoleManager>().ToSelf();
             Bind<IProfileRepository>().To<UserProfileRepository>();
-            Bind<IDbUnitOfWork>().To<ApplicationDbUnitOfWork>().InSingletonScope();
+            Bind<IDbUnitOfWork>().To<ApplicationDbUnitOfWork>();//.InSingletonScope();
         }
     }
 }

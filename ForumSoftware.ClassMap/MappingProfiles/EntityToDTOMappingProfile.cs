@@ -15,7 +15,8 @@ namespace ForumSoftware.ClassMapping.MappingProfiles
         {
             CreateMap<ApplicationUser, UserCredentialsDTO>();
             CreateMap<UserProfile, UserProfileDTO>();
-
+            CreateMap<UserRole, UserRoleDTO>();
+            //Mapper
             // other maps goe here
         }
     }
