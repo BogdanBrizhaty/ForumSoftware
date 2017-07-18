@@ -104,6 +104,7 @@
     <Compile Include="InjectionModules\AutoMapperNinjectModule.cs" />
     <Compile Include="InjectionModules\BLLNinjectModule.cs" />
     <Compile Include="InjectionModules\DALNinjectModule.cs" />
+    <Compile Include="InjectionModuleContainer.cs" />
     <Compile Include="NinjectDependencyResolver.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

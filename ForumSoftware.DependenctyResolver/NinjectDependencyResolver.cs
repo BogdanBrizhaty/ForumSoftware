@@ -3,10 +3,12 @@ using Ninject.Modules;
 using Ninject.Syntax;
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using System.Web.Mvc;
 
 namespace ForumSoftware.DependenctyResolver
 {
+    //public interface
     public class NinjectDependencyResolver : IDependencyResolver
     {
         private IKernel kernel;
@@ -38,12 +40,19 @@ namespace ForumSoftware.DependenctyResolver
             kernel = new StandardKernel();
             AddBindings();
         }
+        public static NinjectDependencyResolver UseRegisteredModules()
+        {
+            return new NinjectDependencyResolver(InjectionModuleContainer.Modules);
+        }
 
         public object GetService(Type serviceType)
         {
             return kernel.TryGet(serviceType);
         }
-
+        public object Get<T>()
+        {
+            return kernel.Get<T>();
+        }
         public IEnumerable<object> GetServices(Type serviceType)
         {
             return kernel.GetAll(serviceType);
