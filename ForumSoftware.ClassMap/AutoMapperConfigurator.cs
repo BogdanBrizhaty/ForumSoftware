@@ -10,18 +10,23 @@ namespace ForumSoftware.ClassMapping
 {
     public static class AutoMapperConfigurator
     {
+        private static HashSet<Profile> _profiles = new HashSet<Profile>();
+        public static HashSet<Profile> Profiles { get { return _profiles; } }
         public static MapperConfiguration InitializeAutoMapper()
         {
             var config = new MapperConfiguration(
-                //cfg => cfg.Add
                 cfg =>
                 {
-                    cfg.AddProfile(new EntityToDTOMappingProfile());
-                    cfg.AddProfile(new DTOtoEntityMappingProfile());
-                    // initialize other mapping profiles
+                    foreach (var profile in Profiles)
+                        cfg.AddProfile(profile);
                 }
                 );
             return config;
+        }
+        public static void PickUpLocalProfiles()
+        {
+            Profiles.Add(new DTOtoEntityMappingProfile());
+            Profiles.Add(new EntityToDTOMappingProfile());
         }
     }
 }
